@@ -359,5 +359,32 @@ fmt.Println(m)
 
 #### 1.6.5 从redis中取出val，累加之后忘记存回redis
 
+#### 1.6.6 git push错误：failed to push some refs to 
 
+* 报错信息
 
+  ```
+  $ git push -u origin master
+  
+  To git@github.com:yangchao0718/cocos2d.git
+  
+   ! [rejected]        master -> master (non-fast-forward)
+  
+  error: failed to push some refs to 'git@github.com:yangchao0718/cocos2d.git
+  
+  hint: Updates were rejected because the tip of your current branch is behin
+  
+  hint: its remote counterpart. Integrate the remote changes (e.g.
+  
+  hint: 'git pull ...') before pushing again.
+  ```
+
+* 解决办法
+
+  ```
+  git pull --rebase origin master
+  git push -u origin master -f
+  git rebase --abort
+  ```
+
+  
